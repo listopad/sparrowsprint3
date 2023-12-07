@@ -23,13 +23,11 @@ struct ContentView: View {
             HStack(spacing: 0) {
                 Image(systemName: "play.fill")
                     .offset(x: 14)
-               //     .foregroundStyle(.red)
                     .offset(x: animationProgress * 24)
                 
                 Image(systemName: "play.fill")
                     .offset(x: 8)
                     .scaleEffect(1.0 - animationProgress)
-                //.foregroundStyle(.green)
                 
                 Image(systemName: "play.fill")
                     .offset(x: 14)
@@ -37,7 +35,7 @@ struct ContentView: View {
                     .offset(x: -60)
             }
         }
-            .font(.largeTitle)
+        .font(.largeTitle)
     }
     
 }
