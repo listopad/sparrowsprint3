@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State var playNext = false
+    @State private var animationProgress: Double = 0.0
     
     var body: some View {
         Button(action: {
-            withAnimation(.easeInOut(duration: 2)) {
-                playNext.toggle()
+            withAnimation() {
+                animationProgress = 1.0
+            } completion: {
+                animationProgress = 0.0
             }
         }) {
             
@@ -21,9 +24,10 @@ struct ContentView: View {
                 Image(systemName: "play.fill")
                     .offset(x: 15)
                     .foregroundStyle(.red)
+                    .offset(x: animationProgress * 20)
                 
                 Image(systemName: "play.fill")
-                    .offset(x: 9)
+                    .offset(x: 10)
                     .foregroundStyle(.green)
                 
                 Image(systemName: "play.fill")
