@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         Button(action: {
-            withAnimation() {
+            withAnimation(.spring(bounce: 0.3).repeatCount(0)) {
                 animationProgress = 1.0
             } completion: {
                 animationProgress = 0.0
@@ -22,17 +22,17 @@ struct ContentView: View {
             
             HStack(spacing: 0) {
                 Image(systemName: "play.fill")
-                    .offset(x: 15)
+                    .offset(x: 14)
                //     .foregroundStyle(.red)
-                    .offset(x: animationProgress * 20)
+                    .offset(x: animationProgress * 24)
                 
                 Image(systemName: "play.fill")
-                    .offset(x: 10)
+                    .offset(x: 8)
                     .scaleEffect(1.0 - animationProgress)
                 //.foregroundStyle(.green)
                 
                 Image(systemName: "play.fill")
-                    .offset(x: 15)
+                    .offset(x: 14)
                     .scaleEffect(animationProgress)
                     .offset(x: -60)
             }
