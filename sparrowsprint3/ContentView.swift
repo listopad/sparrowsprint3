@@ -23,15 +23,17 @@ struct ContentView: View {
             HStack(spacing: 0) {
                 Image(systemName: "play.fill")
                     .offset(x: 15)
-                    .foregroundStyle(.red)
+               //     .foregroundStyle(.red)
                     .offset(x: animationProgress * 20)
                 
                 Image(systemName: "play.fill")
                     .offset(x: 10)
-                    .foregroundStyle(.green)
+                    .scaleEffect(1.0 - animationProgress)
+                //.foregroundStyle(.green)
                 
                 Image(systemName: "play.fill")
                     .offset(x: 15)
+                    .scaleEffect(animationProgress)
                     .offset(x: -60)
             }
         }
