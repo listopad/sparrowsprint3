@@ -13,7 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         Button(action: {
-            withAnimation(.spring(bounce: 0.3).repeatCount(0)) {
+            withAnimation(.spring(bounce: 0.3).repeatCount(0))
+            {
                 animationProgress = 1.0
             } completion: {
                 animationProgress = 0.0
@@ -27,11 +28,11 @@ struct ContentView: View {
                 
                 Image(systemName: "play.fill")
                     .offset(x: 8)
-                    .scaleEffect(1.0 - animationProgress)
+                    .scaleEffect(1.0 - animationProgress, anchor: .trailing)
                 
                 Image(systemName: "play.fill")
                     .offset(x: 14)
-                    .scaleEffect(animationProgress)
+                    .scaleEffect(animationProgress, anchor: .trailing)
                     .offset(x: -60)
             }
         }
